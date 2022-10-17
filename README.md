@@ -1,2 +1,2 @@
 # RestCountries
-A app that displays countries and its data, allows filtering by name and region.
+Um aplicativo desenvolvido em React que apresenta todos os países com suas bandeiras e informações.
