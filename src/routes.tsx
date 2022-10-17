@@ -1,0 +1,16 @@
+
+import { Route, HashRouter as Router, Routes } from "react-router-dom";
+import HomeCountries from "./pages/home-countries";
+
+
+
+export function AppRoutes() {
+    return (     
+        <Router>
+            <Routes >                    
+                <Route path="/" element={<HomeCountries />}/>                
+                <Route path="*" element={<h1 className="h1">NOT FOUND PAGE</h1>}/>                 
+            </Routes>
+        </Router>        
+    )
+}

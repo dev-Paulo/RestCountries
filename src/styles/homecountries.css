@@ -1,0 +1,23 @@
+.body-countries {
+  width: 100vw !important;
+  min-height: 100vh !important;
+}
+
+.conteudo-countries {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.country-flag {
+  /* width: 100%;
+  height: 220px;
+  */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+.search-field {
+    width: 30%;
+}
