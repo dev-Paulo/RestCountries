@@ -3,14 +3,19 @@ import "../styles/homecountries.css";
 
 import { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar/navbar";
-import { SelectByRegion } from "../components/SelectByRegion/select-by-region";
+import  SelectByRegion from "../components/SelectByRegion/select-by-region";
 import { CountriesModel } from "../model/CountriesModel";
 
 function HomeCountries() {
   const [countries, setCountries] = useState<CountriesModel[]>();
   const [search, setSearch] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('');
 
   useEffect(() => {
+    getCountries();
+  }, []);
+
+  function getCountries() {
     fetch("https://restcountries.com/v3.1/all")
       .then(async (res) => {
         if (!res.ok) {
@@ -21,20 +26,33 @@ function HomeCountries() {
         }
       })
       .then((countries) => {
-        setCountries(countries);
-        console.log(countries);
+        setCountries(countries);      
       });
-  }, []);
+      console.log(selectedRegion);
+  }
 
-  function handleSearchField(name: string) {
+  useEffect(() => {
+    if(selectedRegion == "all") {
+      getCountries()
+    } else {
+      getCountriesByRegion();
+    }
+  }, [selectedRegion]);
 
-    const result = countries?.filter(country => {
-      return country?.name?.common === name;
-    });
-
-    setCountries(result);
-    console.log(result);
-   
+    function getCountriesByRegion() {
+    fetch(`https://restcountries.com/v3.1/region/${selectedRegion}`)
+      .then(async (res) => {
+        if (!res.ok) {
+          console.log("Error fetching");
+          // setLoading(false);
+        } else {
+          return res.json();
+        }
+      })
+      .then((response) => {        
+        setCountries(response)
+        console.log(response);
+      });
   }
 
   return (
@@ -55,19 +73,19 @@ function HomeCountries() {
               />
             </div>
             <div>
-              <SelectByRegion />
+              <SelectByRegion region={selectedRegion} setSelectedRegion={setSelectedRegion} />
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-16 py-10">
+          <div className="grid mx-auto lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-6 py-10">
             {countries?.filter((country) => {
               return search.toLowerCase() === '' ? country : country?.name?.common?.toLowerCase().includes(search)
             }).map((country: any, index: any) => {
               return (
-                <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" onClick={() => {console.log(country[index])}}>
+                <div key={index} className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" onClick={() => {console.log(country.name.common)}}>
                   <a href="#">
                     <img
-                      className="rounded-t-lg country-flag aspect-video"
+                      className="rounded-t-lg country-flag"
                       src={country.flags.png}
                       alt=""
                     ></img>
