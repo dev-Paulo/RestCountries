@@ -79,7 +79,7 @@ function HomeCountries() {
         <Link
           to="/country-details"
           key={index}
-          className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          className="max-w-sm max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
           onClick={(e: any) => {
             // navigate("/country-details");
             localStorage.setItem("country", JSON.stringify(country));
@@ -130,14 +130,14 @@ function HomeCountries() {
       <div className="body-countries bg-slate-200">
         <Navbar />
         <div className="conteudo-countries container mx-auto flex py-10 px-10 justify-center ">
-          <div className="items-center justify-between grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 ">
-            <div className="search-field flex flex-wrap mb-4 relative h-15 bg-white items-center rounded pr-10">
+          <div className="flex items-center grid lg:grid-cols-2 md:grid-cols-2 ">
+            <div className="flex h-15 bg-white items-center rounded search-input">
               <div className="flex -mr-px justify-center w-15 p-4">
                 <img src={searchIcon} alt="search icon" id="search-icon"></img>
               </div>
               <input
                 type="text"
-                className="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border-0 h-10 border-grey-light rounded rounded-l-none px-3 self-center text-xl outline-none"
+                className="flex-auto leading-normal w-full flex-1 border-0 h-10 border-grey-light rounded rounded-l-none px-1 self-center text-xl outline-none"
                 placeholder="Search for a country..."
                 onChange={(e: any) => {
                   setSearch(e.target.value);
@@ -151,7 +151,7 @@ function HomeCountries() {
               />
             </div>
 
-            <div className="select-region">
+            <div className="select-region py-4">
               <SelectByRegion
                 region={selectedRegion}
                 setSelectedRegion={setSelectedRegion}
@@ -159,7 +159,7 @@ function HomeCountries() {
             </div>
           </div>
 
-          <div className="container grid mx-auto lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-6 py-10">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-2 gap-6 py-10 justify-center">
             {displayCountries?.slice(
               pagesVisited,
               pagesVisited + countriesPerPage

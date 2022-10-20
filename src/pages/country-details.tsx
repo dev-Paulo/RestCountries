@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../components/Navbar/navbar";
 
 import backButton from "../assets/images/arrow-left-solid.svg";
@@ -7,6 +7,9 @@ import backButton from "../assets/images/arrow-left-solid.svg";
 import "../styles/country-details.css";
 
 export function CountryDetails() {
+
+  // const {countryName} = useParams();
+
   let selectedCountry = JSON.parse(localStorage.getItem("country")!);
 
   let languages: Array<any> = Object.values(selectedCountry.languages);
@@ -21,9 +24,6 @@ export function CountryDetails() {
   // useEffect(() => {   
   //       getCountryBorders();    
   // }, [selectedCountry])
-
-  
-
 
 
   const navigate = useNavigate();

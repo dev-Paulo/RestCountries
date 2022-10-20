@@ -1,5 +1,5 @@
 .body-countries {
-  min-width: 100vw !important;
+  max-width: 100vw !important;
   min-height: 100vh !important;
   overflow-x: hidden;
 }
@@ -8,6 +8,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  
 }
 
 #search-icon {
@@ -22,13 +23,18 @@
   background-size: cover;  */
 }
 
-.search-field {
-    width: 500px;
+.search-input {
+  width: 100%;
+  min-width: 100%;
 }
 
+/* .search-field {
+    width: 500px;
+} */
+
 .select-region {
-  width: 180px;
-  justify-content: end;
+  width: 100%;
+  justify-content: end;  
   display: flex;
 }
 
