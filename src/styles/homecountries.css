@@ -1,6 +1,7 @@
 .body-countries {
-  width: 100vw !important;
+  min-width: 100vw !important;
   min-height: 100vh !important;
+  overflow-x: hidden;
 }
 
 .conteudo-countries {
@@ -9,14 +10,59 @@
   flex-direction: column;
 }
 
+#search-icon {
+  width: 24px;
+  margin-right: 10px;  
+}
+
 .country-flag {
-  width: 100%;
-  height: 220px;  
-  background-position: center;
+  width: 100%!important;    
+  /* background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;  */
 }
 
 .search-field {
-    width: 30%;
+    width: 500px;
+}
+
+.select-region {
+  width: 180px;
+  justify-content: end;
+  display: flex;
+}
+
+.paginationBttns {
+  width: 100%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 4px;
+  border-radius: 5px;
+  border: 1px solid #9b9b9b;
+  color: #303030;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #fafafa;
+}
+
+.paginationBttns a:hover {
+  color: #616161;
+  background-color: #ebebeb;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #349aac;
+}
+
+.paginationDisabled a {
+  color: grey;
+  background-color: rgb(230, 230, 230);
 }

@@ -1,0 +1,44 @@
+.body-details{
+    width: 100vw !important;
+    min-height: 100vh !important;
+}
+
+#backbtn-icon {
+    width: 24px;
+    margin-right: 10px;    
+}
+
+.conteudo-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-flag {
+    max-width: 353px!important;
+    height: 100%;   
+}
+.flag{
+    width: 100%;    
+}
+
+.back-btn{
+    width: 100%;
+    display: flex;
+    /* justify-content: flex-start; */
+}
+
+#country-name-title {
+    margin-bottom: 20px;
+}
+
+
+
+.country-details-list ul li {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.country-details-list ul li span {
+    font-weight: 700;
+}
