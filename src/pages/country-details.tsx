@@ -30,7 +30,7 @@ export function CountryDetails() {
 
   return (
     <>
-      <div className="body-details">
+      <div className="body-details dark:bg-slate-900">
         <Navbar />
 
         <div className="conteudo-details justify-center container mx-auto flex py-10 px-10 ">
@@ -55,11 +55,11 @@ export function CountryDetails() {
             </div>
 
             <div className="details py-10">
-              <h1 id="country-name-title" className="text-3xl font-bold">
+              <h1 id="country-name-title" className="text-3xl font-bold dark:text-white">
                 {selectedCountry.name.common}
               </h1>
 
-              <div className="country-details-list grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-6">
+              <div className="country-details-list grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-6 dark:text-white">
                 <ul>
                   <li>
                     <span>Oficial Name: </span>
@@ -115,7 +115,7 @@ export function CountryDetails() {
 
               <div className="mt-10 grid lg:grid-cols-2 md:grid-cols-2 gap-2 py-10 items-center">
                 <div>
-                  <h1 id="border-countries-title" className="text-2xl font-bold">
+                  <h1 id="border-countries-title" className="text-2xl font-bold dark:text-white">
                     Border Countries: 
                   </h1>
                 </div>

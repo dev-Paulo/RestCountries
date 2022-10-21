@@ -32,10 +32,13 @@
     width: 500px;
 } */
 
-.select-region {
-  width: 100%;
-  justify-content: end;  
+.select-region {  
+  justify-content: flex-end;  
   display: flex;
+}
+
+.body-card{
+  border-top: 1px solid #cecece;
 }
 
 .paginationBttns {
