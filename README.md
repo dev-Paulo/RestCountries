@@ -9,4 +9,6 @@ Este é mais um desafio do site https://www.frontendmentor.io/challenges/rest-co
 
 Com esse projeto eu consegui utilizar a biblioteca Tailwind Css para o grid das flags e outros estilos juntamente com React Boostrap para cuidar da responsividade. Pude testar também paginação de elementos de um array juntamente com um filtro customizado utilizando diversos parametros da API https://restcountries.com/
 
+Pude testar também como implementar um botão para alterar entre os temas light e dark, criando um hook customizado e utilizando createContext e useContext.
+
 
