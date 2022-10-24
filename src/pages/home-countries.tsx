@@ -91,21 +91,16 @@ function HomeCountries() {
     }).map((country: CountriesModel, index) => {
       return (
         <Link
-          to="/country-details"
+          to={`/country-details/${country?.name?.common}`}
           key={index}
-          className="max-w-sm  bg-white shadow-md rounded-lg dark:bg-gray-600 dark:text-white"
-          onClick={(e: any) => {
-            // navigate("/country-details");
-            localStorage.setItem("country", JSON.stringify(country));
-            console.log(localStorage.getItem("country"));
-          }}
+          className="max-w-sm  shadow-md rounded-lg dark:rounded-lg dark:text-white cursor-pointer"      
         >
           <img
             className="rounded-t-lg country-flag aspect-video"
             src={country?.flags?.png}
             alt=""
           ></img>
-          <div className="p-4 body-card dark:bg-gray-800">
+          <div className="p-4 body-card dark:bg-gray-800 rounded-b-lg">
             <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-600 dark:text-gray-100">
               {country?.name?.common}
             </h5>
@@ -190,7 +185,7 @@ function HomeCountries() {
 
   return (
     <>
-      <div className="body-countries dark:bg-slate-900">
+      <div className="body-countries bg-slate-100 dark:bg-slate-900">
         <Navbar />
         <Container className="mx-auto">
           <Row className="justify-content-between d-flex align-items-center mt-4">
@@ -240,7 +235,7 @@ function HomeCountries() {
               <ReactPaginate
                 previousLabel={"Previous"}
                 nextLabel={"Next"}
-                pageCount={pageCount}
+                pageCount={pageCount}                
                 onPageChange={changePage}
                 containerClassName={"paginationBttns"}
                 previousLinkClassName={"previousBttn"}
