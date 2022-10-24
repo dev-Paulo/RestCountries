@@ -9,7 +9,7 @@ export function AppRoutes() {
     return (     
         <Router>
             <Routes >                    
-                <Route path="/#/" element={<HomeCountries />}/>                
+                <Route path="/" element={<HomeCountries />}/>                
                 <Route path="/home" element={<HomeCountries />}/>                
                 <Route path="/country-details/:country" element={<CountryDetails />}/>                
                 <Route path="*" element={<h1 className="h1">NOT FOUND PAGE</h1>}/>                 
