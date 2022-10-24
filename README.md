@@ -11,4 +11,9 @@ Com esse projeto eu consegui utilizar a biblioteca Tailwind Css para o grid das 
 
 Pude testar também como implementar um botão para alterar entre os temas light e dark, criando um hook customizado e utilizando createContext e useContext.
 
+Para a troca de dados entre páginas utilizei o hook useParams do React.
+
+# Demo do site em: 
+https://restcountries-darkmode.netlify.app/#/home
+
 
