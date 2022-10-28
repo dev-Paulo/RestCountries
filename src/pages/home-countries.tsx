@@ -45,7 +45,7 @@ function HomeCountries() {
   }
 
   useEffect(() => {
-    if (selectedRegion == "all") {
+    if (selectedRegion == "") {
       getCountries();
     } else {
       getCountriesByRegion();
