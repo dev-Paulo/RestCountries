@@ -153,8 +153,7 @@ function HomeCountries() {
                   onChange={(e: any) => {
                     setSearch(e.target.value);
                     {
-                      if (e.target.value.length > 0) {
-                        console.log("entrou pae");
+                      if (e.target.value.length > 0) {                       
                         changePage({ selected: 0 });
                       }
                     }
