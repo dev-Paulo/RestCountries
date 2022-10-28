@@ -41,8 +41,7 @@ function HomeCountries() {
       .then((countries) => {
         setCountries(countries);
         setIsLoading(false);
-      });
-    console.log(selectedRegion);
+      });    
   }
 
   useEffect(() => {
@@ -64,8 +63,7 @@ function HomeCountries() {
         }
       })
       .then((response) => {
-        setCountries(response);
-        console.log(response);
+        setCountries(response);       
       });
   }
 
@@ -126,61 +124,11 @@ function HomeCountries() {
         </Link>
       );
     });
-  // const displayCountries = countries
-  //   ?.filter((country) => {
-  //     return search.toLowerCase() === ""
-  //       ? country
-  //       : country?.name?.common?.toLowerCase().includes(search);
-  //   })
-  //   .map((country: CountriesModel, index) => {
-  //     return (
-  //       <Link
-  //         to="/country-details"
-  //         key={index}
-  //         className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-  //         onClick={(e: any) => {
-  //           // navigate("/country-details");
-  //           localStorage.setItem("country", JSON.stringify(country));
-  //           console.log(localStorage.getItem("country"));
-  //         }}
-  //       >
-  //         <img
-  //           className="rounded-t-lg country-flag aspect-video"
-  //           src={country?.flags?.png}
-  //           alt=""
-  //         ></img>
-  //         <div className="p-4">
-  //           <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-  //             {country?.name?.common}
-  //           </h5>
-  //           <p className="mb-3 font-semibold text-gray-700 dark:text-gray-400">
-  //             <span className="font-bold text-gray-700 dark:text-gray-400">
-  //               Population:{" "}
-  //             </span>
-  //             {country?.population?.toLocaleString("pt-BR")}
-  //           </p>
-  //           <p className="mb-3 font-semibold text-gray-700 dark:text-gray-400">
-  //             <span className="font-bold text-gray-700 dark:text-gray-400">
-  //               Region:{" "}
-  //             </span>
-  //             {country.region}
-  //           </p>
-  //           <p className="mb-3 font-semibold text-gray-700 dark:text-gray-400">
-  //             <span className="font-bold text-gray-700 dark:text-gray-400">
-  //               Capital:{" "}
-  //             </span>
-  //             {country.capital}
-  //           </p>
-  //         </div>
-  //       </Link>
-  //     );
-  //   });
 
   const pageCount = Math.ceil(displayCountries?.length / countriesPerPage);
 
   const changePage = ({ selected }: any) => {
-    setPageNumber(selected);
-    console.log(selected);
+    setPageNumber(selected);    
   };
 
   return (

@@ -51,8 +51,6 @@ export function CountryDetails() {
     getCountry();
   }, [params]);
 
-  console.log(country);
-
   return (
     <>
       <div className="body-details dark:bg-slate-900">
@@ -71,8 +69,7 @@ export function CountryDetails() {
                   <div
                     className="flex items-center justify-center"                    
                   >
-                    <MdArrowBack size={26} className="cursor-pointer mr-2" />
-                    {/* <span className="font-bold">Dark Mode</span> */}
+                    <MdArrowBack size={26} className="cursor-pointer mr-2" />                    
                   </div>
                 ) : (
                   <div
@@ -82,11 +79,9 @@ export function CountryDetails() {
                       size={26}
                       className="cursor-pointer mr-2"
                       color="white"
-                    />
-                    {/* <span className="font-bold dark:text-white">Light Mode</span> */}
+                    />                
                   </div>
-                )}
-                {/* <img src={backButton} id="backbtn-icon"></img> */}
+                )}               
                 Voltar
               </button>
             </Col>
@@ -210,113 +205,6 @@ export function CountryDetails() {
               </Row>             
             </Col>
           </Row>
-
-          {/* <div className="grid  lg:grid-cols-2 md:grid-cols-2 gap-16 py-10">
-             <div className="country-details-flag">
-              <img
-                className="flag aspect-video"
-                src={country?.flags?.svg}
-                alt="Country flag"
-              ></img>
-            </div> 
-
-            <div className="details py-10">
-              <h1
-                id="country-name-title"
-                className="text-3xl font-bold dark:text-white"
-              >
-                {country?.name?.common}
-              </h1>
-
-              <div className="country-details-list grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-6 dark:text-white">
-                <ul>
-                  <li>
-                    <span>Oficial Name: </span>
-                    {country?.name?.official}
-                  </li>
-                  <li>
-                    <span>Population: </span>
-                    {country?.population?.toLocaleString("pt-BR")}
-                  </li>
-                  <li>
-                    <span>Region: </span>
-                    {country?.region}
-                  </li>
-                  <li>
-                    <span>Sub Region: </span>
-                    {country?.subregion}
-                  </li>
-                  <li>
-                    <span>Capital: </span>
-                    {country?.capital}
-                  </li>
-                </ul>
-
-                <ul>
-                  <li>
-                    <span>Top Level Domain: </span>
-                    {country?.tld}
-                  </li>
-                  <li>
-                    <span>Currencies: </span>
-                    {currencies?.length > 0
-                      ? currencies?.map((currencie: any, index: any) => {
-                          return (
-                            <React.Fragment key={index}>
-                              {currencie.name}
-                              {index == currencies.length - 1 ? "" : ", "}
-                            </React.Fragment>
-                          );
-                        })
-                      : ""}
-                  </li>
-                  <li>
-                    <span>Languages: </span>
-                    {languages?.length > 0
-                      ? languages?.map((language: any, index: any) => {
-                          return (
-                            <React.Fragment key={index}>
-                              {language}
-                              {index == languages.length - 1 ? "" : ", "}
-                            </React.Fragment>
-                          );
-                        })
-                      : ""}
-                  </li>
-                </ul>
-              </div>
-
-              <div className="mt-10 grid lg:grid-cols-1 md:grid-cols-2 gap-2 py-10 items-center">
-                <div>
-                  <h1
-                    id="border-countries-title"
-                    className="text-2xl font-bold dark:text-white"
-                  >
-                    Border Countries:
-                  </h1>
-                </div>
-                <div>
-                  {country?.borders ? (
-                    countryBorders?.map((border: any, index: any) => {
-                      return (
-                        <button
-                          key={index}
-                          className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center mr-2 mt-2"
-                          onClick={() => {
-                            navigate(`/country-details/${border}`);
-                          }}
-                        >
-                          {border}
-                        </button>
-                      );
-                    })
-                  ) : (
-                    <h1>No borders</h1>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

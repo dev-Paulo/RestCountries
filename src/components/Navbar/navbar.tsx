@@ -28,8 +28,7 @@ export function Navbar() {
                 size={30}
                 className="cursor-pointer"
                 
-              />
-              {/* <span className="font-bold">Dark Mode</span> */}
+              />           
             </div>
           ) : (
             <div className="flex items-center px-2 justify-center" onClick={() => setTheme("light")}>
@@ -37,8 +36,7 @@ export function Navbar() {
                 size={26}
                 className="cursor-pointer"
                 color="white"                
-              />
-             {/* <span className="font-bold dark:text-white">Light Mode</span> */}
+              />          
             </div>
           )}
         </button>
